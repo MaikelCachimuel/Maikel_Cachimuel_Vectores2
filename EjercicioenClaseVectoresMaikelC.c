@@ -1,29 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>  
 
 int main() {
-    int tamanovector;        
-    int cachimuel[100];      
+    int tamanovector;
+    int cachimuel[100];
+    int i;
 
- 
-    printf("Ingrese el tamaño del vector cachimuel, el maximo debe ser 100: ");
+    printf("Ingrese el tamano del vector cachimuel el tamaño maximo es 100: ");
     scanf("%d", &tamanovector);
 
-    
     if (tamanovector > 100 || tamanovector <= 0) {
-        printf("error el tamaño debe estar entre 1 y 100.\n");
+        printf("Error: el tamano debe estar entre 1 y 100.\n");
         return 1;
     }
 
-  
-    printf("Ingrese los %d elementos del vector:\n", tamanovector);
-    for (int i = 0; i < tamanovector; i++) {
-        printf("cachimuel[%d] = ", i);
-        scanf("%d", &cachimuel[i]);
+    for (i = 0; i < tamanovector; i++) {
+        cachimuel[i] = rand() % 100;   
     }
 
-   
-    printf("los elementos del vector cachimuel son:\n");
-    for (int i = 0; i < tamanovector; i++) {
+    printf("\nVector cachimuel :\n");
+    for (i = 0; i < tamanovector; i++) {
         printf("cachimuel[%d] = %d\n", i, cachimuel[i]);
     }
 
