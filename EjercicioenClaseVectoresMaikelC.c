@@ -1,12 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>  
 
+
+void funcion_cachimuel(int cachimuel[], int tamanovector) {
+    int i;
+    
+    for (i = 0; i < tamanovector; i++) {
+        cachimuel[i] = rand() % 100;
+    }
+
+    
+    printf("\nVector cachimuel:\n");
+    for (i = 0; i < tamanovector; i++) {
+        printf("cachimuel[%d] = %d\n", i, cachimuel[i]);
+    }
+}
+
 int main() {
     int tamanovector;
     int cachimuel[100];
-    int i;
 
-    printf("Ingrese el tamano del vector cachimuel el tamaño maximo es 100: ");
+    printf("Ingrese el tamano del vector cachimuel, este debe ser 100 como maximo: ");
     scanf("%d", &tamanovector);
 
     if (tamanovector > 100 || tamanovector <= 0) {
@@ -14,14 +28,6 @@ int main() {
         return 1;
     }
 
-    for (i = 0; i < tamanovector; i++) {
-        cachimuel[i] = rand() % 100;   
-    }
-
-    printf("\nVector cachimuel :\n");
-    for (i = 0; i < tamanovector; i++) {
-        printf("cachimuel[%d] = %d\n", i, cachimuel[i]);
-    }
-
+    funcion_cachimuel(cachimuel, tamanovector);
     return 0;
 }
